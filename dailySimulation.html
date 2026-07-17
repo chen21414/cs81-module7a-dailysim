@@ -4,15 +4,46 @@
   <meta charset="UTF-8">
   <title>My Daily Schedule Simulation</title>
 </head>
+
 <body style="font-family: sans-serif; text-align: center; padding-top: 60px; background-color: #eef;">
 
   <h1>My Simulated Day</h1>
-  <div id="output" style="margin-top: 40px; font-size: 1.5rem;"></div>
+
+  <div
+    id="output"
+    style="margin-top: 40px; font-size: 1.5rem;"
+  >
+    Let's begin!
+  </div>
+
+  <button
+    id="startButton"
+    style="margin-top: 30px; padding: 10px 20px; font-size: 1rem;"
+  >
+    Start Simulation
+  </button>
 
   <script>
+    // Selects the id div output 
     const output = document.getElementById("output");
-    
 
+    // Selects the button id startButton 
+    const startButton = document.getElementById("startButton");
+
+    // Stores several moods 
+    const possibleMoods = [
+      "productive 😊",
+      "tired 😴",
+      "motivated 💪",
+      "relaxed 😌"
+    ];
+
+    // Creates a function that displays an activity after a delay.
+    function scheduleActivity(activity, delay) {
+      setTimeout(function() {
+        output.textContent = activity;
+      }, delay);
+    }
 
   </script>
 
