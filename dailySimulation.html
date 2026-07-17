@@ -45,6 +45,74 @@
       }, delay);
     }
 
+    // when the user clicks the button
+    startButton.addEventListener("click", function() {
+      // disable the button to prevents from starting multiple simulations at once.
+      startButton.disabled = true;
+
+      // Shows the first message immediately.
+      output.textContent = "7:00 AM — Wake up and get ready for work.";
+
+      // Each activity appears after a different amount of time.
+      scheduleActivity(
+        "7:30 AM — Eat breakfast and drink coffee.",
+        2000
+      );
+
+      scheduleActivity(
+        "8:00 AM — Drive to work.",
+        4000
+      );
+
+      scheduleActivity(
+        "8:30 AM — Check emails and review purchase requests.",
+        6000
+      );
+
+      scheduleActivity(
+        "12:00 PM — Take a lunch break.",
+        8000
+      );
+
+      scheduleActivity(
+        "1:00 PM — Continue processing invoices and updating Excel logs.",
+        10000
+      );
+
+      scheduleActivity(
+        "5:00 PM — Finish work and drive home.",
+        12000
+      );
+
+      scheduleActivity(
+        "7:00 PM — Study JavaScript and work on my CS81 assignment.",
+        14000
+      );
+
+      // Selects a random mood from the possibleMoods array.
+      const randomMoodIndex = Math.floor(
+        Math.random() * possibleMoods.length
+      );
+
+      const randomMood = possibleMoods[randomMoodIndex];
+
+      // The randomly selected mood is the creative surprise.
+      scheduleActivity(
+        `Surprise mood check: I feel ${randomMood}`,
+        16000
+      );
+
+      scheduleActivity(
+        "9:00 PM — Relax and watch videos or television.",
+        18000
+      );
+
+      // Displays the final activity and enables the button again.
+      setTimeout(function() {
+        output.textContent = "11:00 PM — Go to sleep. The simulation is complete!";
+        startButton.disabled = false;
+      }, 20000);
+    });
   </script>
 
 </body>
